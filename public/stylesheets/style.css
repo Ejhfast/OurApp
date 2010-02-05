@@ -57,6 +57,9 @@ body {
   color: white; }
   .dark_head h1 {
     padding: 10px; }
+  .dark_head a {
+    color: white;
+    text-decoration: none; }
 
 .head {
   background-color: #214411; }

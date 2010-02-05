@@ -1,0 +1,12 @@
+.grid_12.content
+	%p
+		= @entry.title
+	%p
+		= @entry.request.title
+
+	%p
+		= link_to "Destroy it", request_path(@entry.request_id) + entry_path, :method => 'delete'
+		|
+		= link_to "Edit it", edit_entry_path
+
+.clear

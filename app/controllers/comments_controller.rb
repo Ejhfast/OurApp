@@ -1,14 +1,5 @@
 class CommentsController < ApplicationController
   
-  def get_appropriate_path(path1, path2)
-    rid = params[:request_id]
-    if rid == nil
-      path1
-    else
-      path2
-    end
-  end
-  
   def new
     # Select appropriate path (comments can be created from different sources)
     rid = params[:request_id]

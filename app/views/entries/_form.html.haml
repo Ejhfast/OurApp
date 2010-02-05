@@ -1,0 +1,10 @@
+- form_for @entry, :url => @path do |f|
+	%p 
+		= f.error_messages
+	%p
+		= f.label :title
+		%br
+		= f.text_field :title
+	%p
+		= f.submit "Create"
+	  
