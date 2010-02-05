@@ -1,10 +1,11 @@
 .grid_12.content
 	%p
-		Entry:
-		= @entry.title
-	%p
-		Request:
-		= @entry.request.title
+		Entry
+		%b 
+			= @entry.title 
+		for request 
+		%b 
+			= @entry.request.title
 	%p
 		= image_tag @entry.submission.url(:thumb)
 	%p

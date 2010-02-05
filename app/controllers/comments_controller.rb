@@ -62,6 +62,7 @@ class CommentsController < ApplicationController
     rid = params[:request_id]
     if rid != nil
       @path = new_request_comment_path
+      @req = Request.find(rid)
       @comments = Comment.find(:all, :conditions => {:request_id => rid})
     else
       @path = new_comment_path

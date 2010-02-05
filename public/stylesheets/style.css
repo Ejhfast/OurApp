@@ -69,10 +69,16 @@ body {
 
 .content {
   background-color: white; }
+  .content h1 {
+    font-size: 40px;
+    padding: 10 50 10 50px; }
   .content p {
     font-size: 25px;
     font-family: arial;
-    padding: 20 50 20 70px; }
+    padding: 20 50 20 50px; }
+  .content ul {
+    font-size: 20px;
+    padding: 0 50 0 50px; }
 
 .lighter {
   background-color: #5a5a5a; }

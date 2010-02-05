@@ -1,19 +1,10 @@
 .grid_12.content
-	%p 
-		Make Something
-		= @path
-		= link_to "New", @path
-	%p 
-		This page probably won't exist, but now it lists all the
-		comments -- for every user, for every request, ect.
-	.nothing
+	%h1 
+		Comments for 
+		= @req.title
+	%ul
 		- @comments.each do |c|
-			%p
-				= c.title |
-				= link_to 'Destroy', c, :method => 'delete'
-				|
-				= link_to 'Edit', edit_comment_path(c)
-				|
-				= link_to 'Show', comment_path(c)
+			%li
+				= link_to c.title, comment_path(c)
 		
 .clear

@@ -1,10 +1,16 @@
 .grid_12.content
-	%p 
+	%h1
 		= @req.title
 	%p
-		= link_to "Destroy it", request_path, :method => 'delete'
-		|
+		= @req.description
+	%p
 		= link_to "Comments", request_comments_path(@req)
 		|
 		= link_to "Entries", request_entries_path(@req)
+		
+	- if current_user.id == @req.user_id
+		%p
+			= link_to "Destroy it", request_path, :method => 'delete'
+			|
+			= link_to "Edit it", edit_request_path(@req)
 .clear
