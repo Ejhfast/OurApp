@@ -1,10 +1,13 @@
-- form_for @entry, :url => @path do |f|
+- form_for @entry, :url => @path, :html => {:multipart => true} do |f|
 	%p 
 		= f.error_messages
 	%p
 		= f.label :title
 		%br
 		= f.text_field :title
+	%p
+		= f.label :submission
+		= f.file_field :submission
 	%p
 		= f.submit "Create"
 	  

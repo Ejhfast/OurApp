@@ -32,7 +32,7 @@ class EntriesController < ApplicationController
     
     success = @entry && @entry.save
     if success && @entry.errors.empty?
-      redirect_to request_entries_path
+      redirect_to requests_path
       flash[:notice] = "Entry created!"
     else
       flash[:error] = "We couldn't create your entry, sorry."
@@ -44,7 +44,7 @@ class EntriesController < ApplicationController
     @entry = Entry.find(params[:id])
     success = @entry && @entry.update_attributes(params[:entry])
     if success && @entry.errors.empty?
-      redirect_to request_entries_path 
+      redirect_to requests_path 
       flash[:notice] = "Entry updated!"
     else
       flash[:error] = "We couldn't update your entry, sorry."
@@ -55,7 +55,7 @@ class EntriesController < ApplicationController
   def destroy
     @entry = Entry.find(params[:id])
     @entry.destroy
-    redirect_to request_entries_path  
+    redirect_to requests_path  
   end
 
   def index

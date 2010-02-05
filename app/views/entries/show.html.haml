@@ -1,9 +1,12 @@
 .grid_12.content
 	%p
+		Entry:
 		= @entry.title
 	%p
+		Request:
 		= @entry.request.title
-
+	%p
+		= image_tag @entry.submission.url(:thumb)
 	%p
 		= link_to "Destroy it", request_path(@entry.request_id) + entry_path, :method => 'delete'
 		|

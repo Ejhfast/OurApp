@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100205200504) do
+ActiveRecord::Schema.define(:version => 20100205202809) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",          :null => false
@@ -22,12 +22,16 @@ ActiveRecord::Schema.define(:version => 20100205200504) do
   end
 
   create_table "entries", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.integer  "request_id", :null => false
-    t.integer  "flags",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "title",      :null => false
+    t.integer  "user_id",                 :null => false
+    t.integer  "request_id",              :null => false
+    t.integer  "flags",                   :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "title",                   :null => false
+    t.string   "submission_file_name",    :null => false
+    t.string   "submission_content_type", :null => false
+    t.integer  "submission_file_size",    :null => false
+    t.datetime "submission_updated_at",   :null => false
   end
 
   create_table "requests", :force => true do |t|

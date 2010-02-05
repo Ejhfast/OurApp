@@ -10,7 +10,7 @@
 				= c.title |
 				= link_to 'Destroy', request_path(c.request_id) + entry_path(c), :method => 'delete'
 				|
-				= link_to 'Edit', edit_entry_path(c)
+				= link_to 'Edit', request_path(c.request_id) + edit_entry_path(c)
 				|
 				= link_to 'Show', request_path(c.request_id) + entry_path(c)
 		

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, 
                       :styles => { :medium => "300x300>",
                                    :thumb => "100x100>" }
+                      
   
   validates_attachment_presence :avatar
   
@@ -35,8 +36,8 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation, :avatar, :avatar_file_name, :avatar_file_size, 
-                  :avatar_content_type, :avatar_updated_at
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :avatar#, :avatar_file_name, :avatar_file_size, 
+                  #:avatar_content_type, :avatar_updated_at
 
 
 
