@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100205153038) do
+ActiveRecord::Schema.define(:version => 20100205200504) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",          :null => false
@@ -56,6 +56,10 @@ ActiveRecord::Schema.define(:version => 20100205153038) do
     t.integer  "karma_current",                                            :null => false
     t.integer  "karma_total",                                              :null => false
     t.boolean  "admin?",                                                   :null => false
+    t.string   "avatar_file_name",                                         :null => false
+    t.string   "avatar_content_type",                                      :null => false
+    t.integer  "avatar_file_size",                                         :null => false
+    t.datetime "avatar_updated_at",                                        :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

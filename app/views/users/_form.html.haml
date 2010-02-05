@@ -1,6 +1,6 @@
 - @user.password = @user.password_confirmation = nil
 
-- form_for @user do |f|
+- form_for @user, :html => {:multipart => true} do |f|
 	%p
 		= f.error_messages
 	%p
@@ -20,5 +20,9 @@
 		= f.label :password_confirmation, 'Confirm Password'
 		%br
 		= f.password_field :password_confirmation
+	%p
+		= f.label :avatar
+		%br
+		= f.file_field :avatar
 	%p
 		= f.submit 'Sign up'

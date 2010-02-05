@@ -3,5 +3,7 @@
 		Your login is
 		= @user.login
 	%p
+		= image_tag @user.avatar.url(:medium)
+	%p
 		= link_to 'Edit Account Settings', edit_user_path(@user) 
 .clear
