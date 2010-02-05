@@ -3,12 +3,15 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
   
 
-  # render new.html.erb
   def new
     @user = User.new
   end
   
   def edit
+    @user = User.find(params[:id])
+  end
+  
+  def show
     @user = User.find(params[:id])
   end
  
