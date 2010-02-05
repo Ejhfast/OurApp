@@ -3,6 +3,9 @@
 		Make Something
 		= @path
 		= link_to "New", @path
+	%p 
+		This page probably won't exist, but now it lists all the
+		comments -- for every user, for every request, ect.
 	.nothing
 		- @comments.each do |c|
 			%p

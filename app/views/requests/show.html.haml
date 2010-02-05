@@ -3,4 +3,6 @@
 		= @req.title
 	%p
 		= link_to "Destroy it", request_path, :method => 'delete'
+		|
+		= link_to "Comments", request_comments_path(@req)
 .clear
