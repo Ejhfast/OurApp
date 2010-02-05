@@ -1,0 +1,91 @@
+body {
+  font-family: arial;
+  font-size: font_normal;
+  background-color: #353535; }
+
+.sixty {
+  height: 60px; }
+
+.thirty {
+  height: 30px; }
+
+.one20 {
+  height: 120px; }
+
+.two00 {
+  height: 200px; }
+
+.big_ad {
+  text-align: center; }
+  .big_ad h1 {
+    font-size: 52px;
+    padding: 30px; }
+
+.small_ad {
+  text-align: center; }
+  .small_ad h1 {
+    font-size: 40px;
+    padding: 10px 0px 10px 0px; }
+  .small_ad li {
+    list-style: decimal;
+    position: relative;
+    font-size: 30px;
+    padding: 5px;
+    text-align: left;
+    left: 120px; }
+
+.footer {
+  color: white;
+  border-top: 1px solid #5a5a5a; }
+  .footer p {
+    padding: 20px;
+    font-family: arial;
+    text-align: center;
+    font-size: 15px; }
+
+.dark_head {
+  background-color: #242323;
+  color: white;
+  border-bottom: 1px solid #5a5a5a; }
+  .dark_head h1 {
+    padding: 10px; }
+
+.head {
+  background-color: #214411; }
+
+.navigation {
+  background-color: #39741d; }
+
+.content {
+  background-color: white; }
+  .content p {
+    font-size: 25px;
+    font-family: arial;
+    padding: 20 50 20 70px; }
+
+.lighter {
+  background-color: #5a5a5a; }
+
+.big {
+  font-size: 40px; }
+
+.colorf1l {
+  color: #1E2C73; }
+
+.colorf2l {
+  color: #6B1E72; }
+
+.colorf1d {
+  color: #131C49; }
+
+.colorf2d {
+  color: #39103D; }
+
+.blackf {
+  color: black; }
+
+.borderb {
+  border-bottom: 1px solid black; }
+
+.bordert {
+  border-top: 1px solid black; }

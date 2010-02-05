@@ -1,3 +1,6 @@
+Other gems you will need:
+Haml
+
 User
 	:has_many requests
 	login

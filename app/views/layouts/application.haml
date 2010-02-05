@@ -1,0 +1,17 @@
+%html
+	%head
+		= stylesheet_link_tag 'reset'
+		= stylesheet_link_tag '960'
+		= stylesheet_link_tag 'style'
+	%body
+		.container_12
+			.grid_12.dark_head.sixty.big
+				%h1 LogoHere
+			.clear
+			.grid_12.navigation.thirty
+			.clear
+			= yield
+			.grid_12.dark_head.sixty.footer
+				%p Contact | About | Copyright 2007
+			.clear
+	
