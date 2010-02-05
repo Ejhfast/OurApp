@@ -11,6 +11,37 @@
 
 ActiveRecord::Schema.define(:version => 20100206215034) do
 
+  create_table "comments", :force => true do |t|
+    t.string   "title",          :null => false
+    t.text     "body",           :null => false
+    t.integer  "entry_id",       :null => false
+    t.integer  "request_id",     :null => false
+    t.integer  "parent_comment", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "entries", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "request_id", :null => false
+    t.integer  "flags",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "requests", :force => true do |t|
+    t.string   "title",       :null => false
+    t.text     "description", :null => false
+    t.integer  "category_id", :null => false
+    t.integer  "user_id",     :null => false
+    t.integer  "karma",       :null => false
+    t.date     "start",       :null => false
+    t.date     "end",         :null => false
+    t.boolean  "open",        :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40,                  :null => false
     t.string   "crypted_password",          :limit => 40,                  :null => false
