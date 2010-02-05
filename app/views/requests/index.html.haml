@@ -7,6 +7,10 @@
 			%p
 				= r.title |
 				= link_to 'Destroy', r, :method => 'delete'
+				|
 				= link_to 'Edit', edit_request_path(r)
+				|
+				= link_to 'Show', request_path(r)
+				
 		
 .clear
