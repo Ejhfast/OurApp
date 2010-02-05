@@ -11,6 +11,10 @@
 			.grid_12.navigation.thirty
 			.clear
 			= yield
+			.grid_12.content.sixty
+				%p 
+					= flash[:notice]
+					= flash[:error]
 			.grid_12.dark_head.sixty.footer
 				%p Contact | About | Copyright 2007
 			.clear
