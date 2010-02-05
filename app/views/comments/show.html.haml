@@ -1,6 +1,8 @@
 .grid_12.content
-	%p 
+	%p
 		= @comment.title
+	%p
+		= @comment.body
 	%p
 		= link_to "Destroy it", comment_path, :method => 'delete'
 .clear

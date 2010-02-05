@@ -9,6 +9,9 @@ body {
 .thirty {
   height: 30px; }
 
+.thirty5 {
+  height: 35px; }
+
 .one20 {
   height: 120px; }
 
@@ -33,6 +36,12 @@ body {
     padding: 5px;
     text-align: left;
     left: 120px; }
+
+.signin {
+  text-align: right;
+  color: white; }
+  .signin a {
+    color: white; }
 
 .footer {
   color: white;

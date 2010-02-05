@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+  
+  def edit
+    @user = User.find(params[:id])
+  end
  
   def create
     logout_keeping_session!
@@ -24,6 +28,24 @@ class UsersController < ApplicationController
       flash[:error] = "We couldn't create your account, sorry."
       render :action => 'new'
     end
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    success = @user && @user.update_attributes(params[:user])
+    if success && @user.errors.empty?
+      redirect_to root_path
+      flash[:notice] = "Account updated!"
+    else
+      flash[:error] = "We couldn't update your account, sorry."
+      render :action => 'new'
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to root_path
   end
   
 
