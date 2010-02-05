@@ -30,7 +30,9 @@ ActionController::Routing::Routes.draw do |map|
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 
   # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
+  map.resources :users, :has_many => [ :requests, :entries ]
+  map.resources :requests, :has_many => [:entries, :comments]
+  map.resources :entries, :has_many => :comments
   
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|
