@@ -64,6 +64,7 @@ class EntriesController < ApplicationController
     if rid != nil
       @path = new_request_entry_path
       @entries = Entry.find(:all, :conditions => {:request_id => rid})
+      @req = Request.find(rid)
     else
       flash[:error] = "An entry must be attached to a request!"
       redirect_to requests_path

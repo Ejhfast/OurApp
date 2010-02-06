@@ -1,17 +1,13 @@
 .grid_12.content
 	%p 
-		Make Something
-		= @path
-		= link_to "New", @path
-	%p 
-	.nothing
+		Entries for 
+		= link_to @req.title, request_path(@req)
+	%ul
 		- @entries.each do |c|		
-			%p
-				= c.title |
-				= link_to 'Destroy', request_path(c.request_id) + entry_path(c), :method => 'delete'
-				|
-				= link_to 'Edit', request_path(c.request_id) + edit_entry_path(c)
-				|
-				= link_to 'Show', request_path(c.request_id) + entry_path(c)
+			%li
+				= link_to c.title, request_path(c.request_id) + entry_path(c)
+	%p
+		= link_to "New Entry", @path
+	
 		
 .clear

@@ -4,13 +4,16 @@
 		%b 
 			= @entry.title 
 		for request 
-		%b 
-			= @entry.request.title
+		= link_to @entry.request.title, request_path(@entry.request)
 	%p
 		= image_tag @entry.submission.url(:thumb)
 	%p
-		= link_to "Destroy it", request_path(@entry.request_id) + entry_path, :method => 'delete'
-		|
-		= link_to "Edit it", edit_entry_path
+		See other
+		= link_to "entries", request_entries_path
+	- if current_user.id == @entry.user_id or current_user.admin
+		%p
+			= link_to "Destroy it", request_path(@entry.request_id) + entry_path, :method => 'delete'
+			|
+			= link_to "Edit it", edit_entry_path
 
 .clear
