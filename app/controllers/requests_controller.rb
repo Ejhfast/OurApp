@@ -43,6 +43,27 @@ class RequestsController < ApplicationController
 
   def index
     @reqs = Request.all
+    @categories = Category.find(:all)
+    @selected_categories = @categories.map{|category| category.name} if @selected_categories.blank?
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @requests}
+      @requests= Request
+    end
   end
+  
+  def filter_by_category
+    @selected_categories = params[:categories]
+    @requests = Request.find_by_categories(@selected_categories)
+    @categories = Category.find(:all)
+    render :action => "index"
+  end
+  
+  private
+  
+  def find_all_categories
+    Category.fina(:all)
+  end
+  
 
 end

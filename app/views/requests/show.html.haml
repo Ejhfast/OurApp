@@ -3,6 +3,10 @@
 		= @req.title
 	%p
 		= @req.description
+	
+	%p
+		Awards:
+		= @req.karma
 	%p
 		= link_to "Comments", request_comments_path(@req)
 		|

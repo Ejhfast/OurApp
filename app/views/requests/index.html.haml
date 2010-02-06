@@ -10,4 +10,14 @@
 				|
 				= r.submitted_long_ago
 		
+	- form_tag filter_by_category_requests_path do			
+		%ul
+			-@categories.each do |category|
+				= category_list_item(category, @selected_categor)
+			
+		= submit_tag 'Filter'
+	
+			
+	
+		
 .clear
