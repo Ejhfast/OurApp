@@ -33,6 +33,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :has_many => [ :requests, :entries ]
   map.resources :requests, :has_many => [:entries, :comments]
   map.resources :entries, :has_many => :comments
+  map.resources :categories
   
   # Sample resource route with more complex sub-resources
   #   map.resources :products do |products|

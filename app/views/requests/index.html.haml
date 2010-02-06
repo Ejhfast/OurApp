@@ -6,7 +6,7 @@
 			%li
 				= link_to r.title, request_path(r) 
 				|
-				category
+				= Category.find(r.category_id).name
 				|
 				= r.submitted_long_ago
 		

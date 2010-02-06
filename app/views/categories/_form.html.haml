@@ -1,0 +1,10 @@
+- form_for @cat do |f|
+	%p 
+		= f.error_messages
+	%p
+		= f.label :name
+		%br
+		= f.text_field :name
+	%p
+		= f.submit "Create"
+	  

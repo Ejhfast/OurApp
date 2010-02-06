@@ -10,6 +10,10 @@
 		%br
 		= f.text_area :description
 	%p
+		= f.label :category
+		%br
+		= select("request", "category_id", Category.all.collect {|p| [ p.name, p.id ] }, {:include_blank => 'None'})
+	%p
 		= f.label :karma
 		%br
 		= select "request", "karma", (5..100).to_a

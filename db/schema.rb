@@ -18,67 +18,67 @@ ActiveRecord::Schema.define(:version => 20100206024152) do
   end
 
   create_table "comments", :force => true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "entry_id"
-    t.integer  "request_id"
-    t.integer  "parent_comment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
+    t.string   "title",          :null => false
+    t.text     "body",           :null => false
+    t.integer  "entry_id",       :null => false
+    t.integer  "request_id",     :null => false
+    t.integer  "parent_comment", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "user_id",        :null => false
   end
 
   create_table "entries", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "request_id"
-    t.integer  "flags"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.string   "submission_file_name"
-    t.string   "submission_content_type"
-    t.integer  "submission_file_size"
-    t.datetime "submission_updated_at"
+    t.integer  "user_id",                 :null => false
+    t.integer  "request_id",              :null => false
+    t.integer  "flags",                   :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "title",                   :null => false
+    t.string   "submission_file_name",    :null => false
+    t.string   "submission_content_type", :null => false
+    t.integer  "submission_file_size",    :null => false
+    t.datetime "submission_updated_at",   :null => false
   end
 
   create_table "requests", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "category_id"
-    t.integer  "user_id"
-    t.integer  "karma"
-    t.date     "start"
-    t.date     "end"
-    t.boolean  "open"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "title",       :null => false
+    t.text     "description", :null => false
+    t.integer  "category_id", :null => false
+    t.integer  "user_id",     :null => false
+    t.integer  "karma",       :null => false
+    t.date     "start",       :null => false
+    t.date     "end",         :null => false
+    t.boolean  "open",        :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",                     :limit => 40
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.string   "remember_token",            :limit => 40
-    t.datetime "remember_token_expires_at"
-    t.string   "name",                      :limit => 100, :default => ""
-    t.string   "email",                     :limit => 100
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "karma_current",                            :default => 20
-    t.integer  "karma_total",                              :default => 20
-    t.boolean  "admin?"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "login",                     :limit => 40,                  :null => false
+    t.string   "crypted_password",          :limit => 40,                  :null => false
+    t.string   "salt",                      :limit => 40,                  :null => false
+    t.string   "remember_token",            :limit => 40,                  :null => false
+    t.datetime "remember_token_expires_at",                                :null => false
+    t.string   "name",                      :limit => 100, :default => "", :null => false
+    t.string   "email",                     :limit => 100,                 :null => false
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
+    t.integer  "karma_current",                            :default => 20, :null => false
+    t.integer  "karma_total",                              :default => 20, :null => false
+    t.boolean  "admin",                                                    :null => false
+    t.string   "avatar_file_name",                                         :null => false
+    t.string   "avatar_content_type",                                      :null => false
+    t.integer  "avatar_file_size",                                         :null => false
+    t.datetime "avatar_updated_at",                                        :null => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
   create_table "winners", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "entry_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "entry_id",   :null => false
   end
 
 end

@@ -1,0 +1,8 @@
+.grid_12.content
+	%h1
+		= @cat.name
+	-if current_user.admin
+		%p
+			= link_to "Destroy it", category_path, :method => 'delete'
+			= link_to "Edit it", edit_category_path
+.clear

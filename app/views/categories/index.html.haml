@@ -1,0 +1,11 @@
+.grid_12.content
+	%h1 
+		Categories (make a
+		= link_to "New", new_category_path
+		one)
+	%ul
+		- @categories.each do |c|
+			%li
+				= link_to c.name, category_path(c)
+		
+.clear
