@@ -1,4 +1,5 @@
 class Request < ActiveRecord::Base
+  
   has_many :entries
   has_many :commments
   belongs_to :user

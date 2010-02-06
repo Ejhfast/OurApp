@@ -1,12 +1,13 @@
 .span-22.prepend-1.append-1.last
 	%h2
-		= link_to "New Request", new_request_path
-	- form_tag filter_by_category_requests_path do			
+		List of Open Requests
+		=link_to '[Refresh Filter]', requests_path
+		
+	- form_tag filter_by_category_requests_path, :method => 'get' do			
 		%ul
 			-@categories.each do |category|
-				= category_list_item(category, @selected_category)
-			= submit_tag 'Filter'
-			
+				= category_list_item(category, @selected_categories)
+			= submit_tag 'Filter'			
 	%table
 		%tr.underline 
 			%th Name
@@ -30,4 +31,6 @@
 					= r.user.login unless r.user == nil
 				%td
 					= r.submitted_long_ago
+	%p
+		= link_to "New Request", new_request_path
 			
