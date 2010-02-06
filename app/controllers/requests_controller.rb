@@ -54,7 +54,7 @@ class RequestsController < ApplicationController
   
   def filter_by_category
     @selected_categories = params[:categories]
-    @requests = Request.find_by_categories(@selected_categories)
+    @reqs = Request.find_by_categories(@selected_categories)
     @categories = Category.find(:all)
     render :action => "index"
   end
@@ -62,7 +62,7 @@ class RequestsController < ApplicationController
   private
   
   def find_all_categories
-    Category.fina(:all)
+    Category.find(:all)
   end
   
 
