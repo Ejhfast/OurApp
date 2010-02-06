@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   include AuthenticatedSystem
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  
+  def enough_karma?(user, karma)
+    if user.karma_current > karma
+      true
+    else
+      false
+    end
+  end
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password

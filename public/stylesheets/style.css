@@ -4,6 +4,14 @@ body {
 .container {
   background-color: white; }
 
+.red {
+  background-color: red;
+  color: white; }
+
+.green {
+  background-color: green;
+  color: white; }
+
 .signin {
   background-color: #424242;
   color: white; }

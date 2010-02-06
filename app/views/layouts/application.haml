@@ -13,13 +13,14 @@
 			.span-23.prepend-1.last
 				%br
 				%h1 
-					= link_to 'LogoHere', root_path
+					= link_to 'BijectKarma', root_path
+			.span-24.center.last
+				%p.green 
+					= flash[:notice]
+				%p.red
+					= flash[:error]
 			.span-24.last
 			= yield
-			.span-24.last
-				%p 
-					= flash[:notice]
-					= flash[:error]
 			.span-24.center.last
 				%p Contact | About | Copyright 2007
 			.clear

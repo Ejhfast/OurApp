@@ -13,8 +13,18 @@ class RequestsController < ApplicationController
 
   def create
     @req = Request.new(params[:request])
+    
+    # I wish I could do this (check valid currency for request) in the model... Know how?
+    
+    if not enough_karma?(@req.user, @req.karma)
+      flash[:error] = "Not enough karma!"
+      return redirect_to requests_path
+    end
+    
     success = @req && @req.save
     if success && @req.errors.empty?
+      @req.user.karma_current = @req.user.karma_current - @req.karma
+      @req.user.save
       redirect_to requests_path
       flash[:notice] = "Request created!"
     else

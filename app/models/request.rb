@@ -5,6 +5,11 @@ class Request < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   
+  validates_presence_of     :title
+  validates_presence_of     :category_id
+  validates_presence_of     :user_id
+  validates_numericality_of :karma
+  
   def submitted_long_ago
     # determine how many minutes ago was this script created/submitted
     minutes_ago = (Time.now - self.created_at)/60
