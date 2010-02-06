@@ -20,5 +20,7 @@
 	%p
 		= datetime_select "request", "end", :default => 3.days.from_now
 	%p
+		= f.hidden_field "user_id", {:value => current_user.id}
+	%p
 		= f.submit "Create"
 	  
