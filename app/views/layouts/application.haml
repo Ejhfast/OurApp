@@ -1,26 +1,24 @@
 %html
 	%head
-		= stylesheet_link_tag 'reset'
-		= stylesheet_link_tag '960'
-		= stylesheet_link_tag 'style'
+		= stylesheet_link_tag 'ie'
+		= stylesheet_link_tag 'print'
+		= stylesheet_link_tag 'screen'
 	%body
-		.container_12
-			.grid_12.fourty.signin
-				%p 
+		.container
+			.span-24.last
+				%p
 					= render :partial => 'users/user_bar'
 			.clear
-			.grid_12.dark_head.sixty.big
+			.span-24.last
 				%h1 
 					= link_to 'LogoHere', root_path
-			.clear
-			.grid_12.navigation.thirty
-			.clear
+			.span-24.last
 			= yield
-			.grid_12.content.sixty
+			.span-24.last
 				%p 
 					= flash[:notice]
 					= flash[:error]
-			.grid_12.dark_head.sixty.footer
+			.span-24.last
 				%p Contact | About | Copyright 2007
 			.clear
 	

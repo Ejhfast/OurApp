@@ -1,4 +1,4 @@
-.grid_12.content
+.span-24.last
 	%h1
 		Comment on 
 		= link_to @thing.title, @thing_path
@@ -11,4 +11,3 @@
 		%p
 			= link_to "Destroy it", @thing_path + comment_path, :method => 'delete'
 			= link_to "Edit it", edit_comment_path
-.clear
