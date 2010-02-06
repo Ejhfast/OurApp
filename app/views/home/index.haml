@@ -1,13 +1,34 @@
 .span-24.center.last
-	%h1 big slogan thing here.
+	%h1 some random idealistic message.
 .span-24.last
 .span-12.center
-	%h2 headline is nice.
+	%h2 
+		browse
+		= link_to 'open requests.', requests_path
 .span-12.center.last
-	%h2 yes, and another.
-.span-22.last.prepend-1.append-1
-	%p 
-		Yes, I suck at design. This is only a template and demonstration of the "grid" system.
-	%p
-		As for this box, there are a bunch of things here - potential listings and such - that should hopefully
-		look very nice. Just good stuff.
+	%h2 
+		view
+		= link_to 'awesome work.', requests_path
+.span-16.last.prepend-4.append-4
+	%h4
+		There could be an eloquent and generally awesome message pertaining to what we
+		do, what our goals our, and why people should use this site. I think we 
+		probably also want to some images of 'completed work' on this page.
+.span-8.last.prepend-7.append-7
+	%h4
+		Things left to do:
+		%ul
+			%li Cleanup/create decent design
+			%li Make user profile useful (portfolio, ect.)
+			%li Random security stuff (limit uploads, deletions, ect.)
+			%li Pagination of some pages
+			%li Setup comment-reply system
+			%li Setup karma operation
+			%li Setup winner operation
+			%li Create way to browse winners
+			%li Sorting options (by karma, date, ect.)
+.span-16.last.prepend-4.append-4
+	%h4
+		The functionality is looking decent for the most part. We should probably talk in person
+		at some point later in the week.
+
