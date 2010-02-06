@@ -1,6 +1,12 @@
-.span-24.last
-	%h1
+.span-22.prepend-1.append-1.last
+	%h2
 		= link_to "New Request", new_request_path
+	- form_tag filter_by_category_requests_path do			
+		%ul
+			-@categories.each do |category|
+				= category_list_item(category, @selected_category)
+			= submit_tag 'Filter'
+			
 	%ul
 		- @reqs.each do |r|
 			%li
@@ -9,10 +15,4 @@
 				= Category.find(r.category_id).name
 				|
 				= r.submitted_long_ago
-		
-	- form_tag filter_by_category_requests_path do			
-		%ul
-			-@categories.each do |category|
-				= category_list_item(category, @selected_categor)
 			
-		= submit_tag 'Filter'

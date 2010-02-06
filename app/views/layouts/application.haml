@@ -3,13 +3,15 @@
 		= stylesheet_link_tag 'ie'
 		= stylesheet_link_tag 'print'
 		= stylesheet_link_tag 'screen'
+		= stylesheet_link_tag 'style'
 	%body
 		.container
-			.span-24.last
+			.span-24.align_right.signin.last
 				%p
 					= render :partial => 'users/user_bar'
 			.clear
-			.span-24.last
+			.span-23.prepend-1.last
+				%br
 				%h1 
 					= link_to 'LogoHere', root_path
 			.span-24.last
@@ -18,7 +20,7 @@
 				%p 
 					= flash[:notice]
 					= flash[:error]
-			.span-24.last
+			.span-24.center.last
 				%p Contact | About | Copyright 2007
 			.clear
 	
