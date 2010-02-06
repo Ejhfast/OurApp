@@ -1,10 +1,14 @@
 .grid_12.content
 	%h1
-		= @comment.title
+		Comment on 
+		= link_to @thing.title, @thing_path
 	%p
+		%b
+			= @comment.title
+		%br
 		= @comment.body
-	-if current_user == @comment.user_id
+	-if current_user == @comment.user_id or current_user.admin
 		%p
-			= link_to "Destroy it", comment_path, :method => 'delete'
+			= link_to "Destroy it", @thing_path + comment_path, :method => 'delete'
 			= link_to "Edit it", edit_comment_path
 .clear

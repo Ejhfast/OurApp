@@ -1,10 +1,12 @@
 .grid_12.content
 	%h1 
 		Comments for 
-		= @req.title
+		= link_to @thing.title, @thing_path
 	%ul
 		- @comments.each do |c|
 			%li
-				= link_to c.title, comment_path(c)
+				= link_to c.title, @thing_path + comment_path(c)
+	%p 
+		= link_to "New Comment", @path
 		
 .clear

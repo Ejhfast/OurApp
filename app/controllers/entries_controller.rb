@@ -18,6 +18,9 @@ class EntriesController < ApplicationController
 
   def show
     @entry = Entry.find(params[:id])
+    if params[:request_id] == nil
+      redirect_to request_path(@entry.request) + entry_path(@entry)
+    end
   end
 
   def create
