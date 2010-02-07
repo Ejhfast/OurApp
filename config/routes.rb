@@ -26,6 +26,8 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'home'
   
+  map.connect 'winner/declare_winner', :method => 'post', :controller => 'winners', :action => 'declare_winner'
+  
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
 

@@ -1,6 +1,7 @@
 .span-22.prepend-1.append-1.last
 	%h1
 		= @req.title
+	%hr
 .span-5.prepend-1
 	%h2
 		Award:
@@ -26,3 +27,12 @@
 			= link_to "Destroy it", request_path, :method => 'delete'
 			|
 			= link_to "Edit it", edit_request_path(@req)
+.span-22.prepend-1.append-1.center.last
+	- if not @req.open
+		%hr
+		%h4 
+			This Request is Closed. See the
+			= link_to "Winner", requests_path
+			
+		%hr
+		

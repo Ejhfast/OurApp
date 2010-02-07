@@ -22,5 +22,7 @@
 	%p
 		= f.hidden_field "user_id", {:value => current_user.id}
 	%p
+		= f.hidden_field "open", {:value => true}
+	%p
 		= f.submit "Create"
 	  

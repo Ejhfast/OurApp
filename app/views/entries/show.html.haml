@@ -10,6 +10,12 @@
 	%p
 		See other
 		= link_to "entries", request_entries_path
+	-if @entry.request.user_id == current_user.id or current_user.admin
+		- form_tag :controller => 'winners', :action => 'declare_winner', :method => 'post' do
+			= hidden_field_tag "entry_id", @entry.id
+			%h4 
+				Declare this a winner |
+				= submit_tag "Submit"
 	- if current_user.id == @entry.user_id or current_user.admin
 		%p
 			= link_to "Destroy it", request_path(@entry.request_id) + entry_path, :method => 'delete'

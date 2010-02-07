@@ -12,11 +12,16 @@ body {
   background-color: green;
   color: white; }
 
-.signin {
+.onback {
   background-color: #424242;
   color: white; }
-  .signin a {
+  .onback h1 a {
+    text-decoration: none;
     color: white; }
+  .onback a {
+    color: white; }
+    .onback a hover {
+      color: black; }
 
 .align_right {
   text-align: right; }

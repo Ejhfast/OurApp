@@ -10,6 +10,8 @@ class Request < ActiveRecord::Base
   validates_presence_of     :user_id
   validates_numericality_of :karma
   
+  public
+  
   def submitted_long_ago
     # determine how many minutes ago was this script created/submitted
     minutes_ago = (Time.now - self.created_at)/60
@@ -30,6 +32,10 @@ class Request < ActiveRecord::Base
     end
     units.chop! if value.round == 1
     "#{value.round} #{units}" 
+  end
+  
+  def is_open
+    self.open
   end
   
   def self.find_by_categories(category_list)

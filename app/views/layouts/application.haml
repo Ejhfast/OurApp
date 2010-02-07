@@ -6,14 +6,15 @@
 		= stylesheet_link_tag 'style'
 	%body
 		.container
-			.span-24.align_right.signin.last
-				%p
-					= render :partial => 'users/user_bar'
-			.clear
+			.span-24.onback
+				.span-12
+					%br
+					%h1 
+						= link_to 'BijectKarma', root_path
+				.span-12.align_right.onback.last
+					%p
+						= render :partial => 'users/user_bar'
 			.span-23.prepend-1.last
-				%br
-				%h1 
-					= link_to 'BijectKarma', root_path
 			.span-24.center.last
 				%p.green 
 					= flash[:notice]
