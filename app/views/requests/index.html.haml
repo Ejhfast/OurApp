@@ -1,8 +1,10 @@
-.span-22.prepend-1.append-1.last
+.span-17.prepend-1
 	%h2
 		List of Open Requests
-		=link_to '[Refresh Filter]', requests_path
-		
+.span-5.append-1.last
+	%h2
+		=link_to 'Refresh Filter', requests_path
+.span-22.prepend-1.append-1.last
 	- form_tag filter_by_category_requests_path, :method => 'get' do			
 		%ul
 			-@categories.each do |category|
