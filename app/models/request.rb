@@ -1,5 +1,7 @@
 class Request < ActiveRecord::Base
   
+  undef_method :open
+  
   has_many :entries
   has_many :commments
   belongs_to :user
@@ -9,6 +11,8 @@ class Request < ActiveRecord::Base
   validates_presence_of     :category_id
   validates_presence_of     :user_id
   validates_numericality_of :karma
+  
+  attr_accessible :open, :through => :entries
   
   public
   
@@ -32,10 +36,6 @@ class Request < ActiveRecord::Base
     end
     units.chop! if value.round == 1
     "#{value.round} #{units}" 
-  end
-  
-  def is_open
-    self.open
   end
   
   def self.find_by_categories(category_list)

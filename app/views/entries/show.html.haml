@@ -10,7 +10,7 @@
 	%p
 		See other
 		= link_to "entries", request_entries_path
-	-if @entry.request.user_id == current_user.id or current_user.admin
+	-if (@entry.request.user_id == current_user.id or current_user.admin) && @entry.request.open
 		- form_tag :controller => 'winners', :action => 'declare_winner', :method => 'post' do
 			= hidden_field_tag "entry_id", @entry.id
 			%h4 
