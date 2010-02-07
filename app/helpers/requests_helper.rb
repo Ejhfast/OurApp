@@ -11,5 +11,19 @@ module RequestsHelper
   	ret += category.name
   	ret += "</li>"
 	end 
+	
+	def sort_order_as_options(selected)
+	  hash = {"karma" => "karma DESC", "old" => "end ASC", "new" => "end ASC"}
+	  res = ""
+	  sel = ""
+	  hash.keys.each do |key|
+	    if key == selected
+	      sel = "selected"
+      end
+	    res += "<option value=#{key} #{sel}>#{key}</option>"
+	    sel = ""
+    end
+    res
+  end
   
 end

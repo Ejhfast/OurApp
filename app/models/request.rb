@@ -2,6 +2,9 @@ class Request < ActiveRecord::Base
   
   undef_method :open
   
+  before_save :reduce_users_karma
+  
+  
   has_many :entries
   has_many :commments
   belongs_to :user
@@ -14,6 +17,7 @@ class Request < ActiveRecord::Base
   validates_presence_of     :category_id
   validates_presence_of     :user_id
   validates_numericality_of :karma
+  validate :validate_karma
     
   public
   
@@ -41,6 +45,19 @@ class Request < ActiveRecord::Base
     end
     units.chop! if value.round == 1
     "#{value.round} #{units}" 
+  end
+  
+  def validate_karma    
+    if self.user
+      errors.add(:karma, "You do not have enough karma!") unless self.user.karma_current > karma
+    else
+      errors.add(:user, "No user in request")
+    end
+  end
+  
+  def reduce_users_karma
+    self.user.karma_current -= karma
+    self.user.save
   end
   
   def self.find_by_categories(category_list, order)

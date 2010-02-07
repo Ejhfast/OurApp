@@ -12,18 +12,9 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @req = Request.new(params[:request])
-    
-    # I wish I could do this (check valid currency for request) in the model... Know how?
-    
-    if not enough_karma?(@req.user, @req.karma)
-      flash[:error] = "Not enough karma!"
-      return redirect_to requests_path
-    end
-    
+    @req = Request.new(params[:request])    
     success = @req && @req.save
     if success && @req.errors.empty?
-      @req.user.karma_current = @req.user.karma_current - @req.karma
       @req.user.save
       redirect_to requests_path
       flash[:notice] = "Request created!"
@@ -53,6 +44,7 @@ class RequestsController < ApplicationController
 
   def index
     @reqs = Request.ordered(sort_order[params[:sort]])
+    @order = params[:sort]
     @categories = Category.find(:all)
     @selected_categories = @categories.map{|category| category.name} if @selected_categories.blank?
     respond_to do |format|
@@ -64,8 +56,8 @@ class RequestsController < ApplicationController
   
   def filter_by_category
     @selected_categories = params[:categories]
-    order = params[:sort]
-    @reqs = Request.find_by_categories(@selected_categories, sort_order[order])
+    @order = params[:sort]
+    @reqs = Request.find_by_categories(@selected_categories, sort_order[@order])
     @categories = Category.find(:all)
     render :action => "index"
   end
