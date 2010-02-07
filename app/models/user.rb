@@ -1,6 +1,10 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  
+  has_many :requests
+  # has_one :entry #entries? a user can only have on entry per request but can have multiple entries over their lifetime
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
