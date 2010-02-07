@@ -2,16 +2,16 @@
 	%h1
 		= @user.login	
 	%hr
-.span-11.prepend-1
+.span-10.prepend-1.append-1
 	%h2
 		karma:
 		= @user.karma_total
 	%hr
-.span-11.append-1.last
+.span-10.append-2.last
 	%h2
 		currency:
 		= "#{@user.karma_current}&sect;"
-	%hr
+	%hr	
 .span-11.prepend-1
 	%h3 
 		Recent Requests
