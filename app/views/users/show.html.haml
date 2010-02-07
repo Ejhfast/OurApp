@@ -1,13 +1,32 @@
 .span-22.prepend-1.append-1.last
+	%h1
+		= @user.login	
+	%hr
+.span-11.prepend-1
 	%h2
-		= @user.login
-	%p
-		= image_tag @user.avatar.url(:thumb)
+		karma:
+		= @user.karma_total
+	%hr
+.span-11.append-1.last
+	%h2
+		currency:
+		= "#{@user.karma_current}&sect;"
+	%hr
+.span-11.prepend-1
+	%h3 
+		Recent Requests
+	%ul
+		- @user.requests.each do |r|
+			%li 
+				= link_to r.title, request_path(r)
+.span-11.append-1.last
+	%h3
+		Recent Entries
+	%ul
+		- @user.entries.each do |e|
+			%li
+				= link_to e.title, request_path(e.request) + entry_path(e)
+
+.span-22.prepend-1.append-1.last
 	%p
 		= link_to 'Edit Account Settings', edit_user_path(@user)
-	%p
-		Your Total Karma:
-		= @user.karma_total
-	%p
-		Your Current Karma (currency):
-		= @user.karma_current
