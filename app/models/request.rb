@@ -7,14 +7,19 @@ class Request < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   
+  named_scope :ordered, lambda {|*args| {:order => (args.first || 'created_at DESC')} }
+  
+  
   validates_presence_of     :title
   validates_presence_of     :category_id
   validates_presence_of     :user_id
   validates_numericality_of :karma
-  
-  attr_accessible :open, :through => :entries
-  
+    
   public
+  
+  def inv_karma
+    -1 * self.karma
+  end
   
   def submitted_long_ago
     # determine how many minutes ago was this script created/submitted
@@ -38,8 +43,8 @@ class Request < ActiveRecord::Base
     "#{value.round} #{units}" 
   end
   
-  def self.find_by_categories(category_list)
-    Request.find(:all, :include => :category, :conditions =>{"categories.name" => category_list})
+  def self.find_by_categories(category_list, order)
+    Request.find(:all, :include => :category, :conditions =>{"categories.name" => category_list}, :order => order)
   end
   
 end

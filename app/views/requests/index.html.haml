@@ -4,12 +4,19 @@
 .span-5.append-1.last
 	%h2
 		=link_to 'Refresh Filter', requests_path
-.span-22.prepend-1.append-1.last
+.span-11.prepend-1
 	- form_tag filter_by_category_requests_path, :method => 'get' do			
 		%ul
 			-@categories.each do |category|
 				= category_list_item(category, @selected_categories)
-			= submit_tag 'Filter'			
+			= submit_tag 'Filter'
+.span-11.append-1.last			
+	%h4
+		Filter By
+		= link_to 'Karma Awarded,', requests_path, :sort => 'karma'
+		= link_to 'Just Posted,', requests_path, :sort => 'start'
+		= link_to 'About to End', requests_path, :sort => 'end'
+.span-22.prepend-1.append-1.last
 	%table
 		%tr.underline 
 			%th Name

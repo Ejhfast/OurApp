@@ -52,7 +52,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @reqs = Request.all
+    @reqs = Request.ordered(sort_order[params[:sort]])
     @categories = Category.find(:all)
     @selected_categories = @categories.map{|category| category.name} if @selected_categories.blank?
     respond_to do |format|
@@ -64,7 +64,8 @@ class RequestsController < ApplicationController
   
   def filter_by_category
     @selected_categories = params[:categories]
-    @reqs = Request.find_by_categories(@selected_categories)
+    order = params[:sort]
+    @reqs = Request.find_by_categories(@selected_categories, sort_order[order])
     @categories = Category.find(:all)
     render :action => "index"
   end
@@ -74,6 +75,11 @@ class RequestsController < ApplicationController
   def find_all_categories
     Category.find(:all)
   end
+  
+	def sort_order 
+	  {"karma" => "karma DESC", "old" => "end ASC", "new" => "end ASC", nil => nil}
+  end
+	
   
 
 end
