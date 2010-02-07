@@ -28,7 +28,7 @@
 				%td
 					= r.karma
 				%td
-					= r.user.login unless r.user == nil
+					= link_to r.user.login, user_path(r.user) unless r.user == nil
 				%td
 					= r.submitted_long_ago
 	%p

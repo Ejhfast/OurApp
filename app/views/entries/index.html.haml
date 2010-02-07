@@ -12,7 +12,7 @@
 				%td
 					= link_to c.title, request_path(c.request_id) + entry_path(c)
 				%td 
-					= link_to c.user.login, user_path(c.user)
+					= link_to c.user.login, user_path(c.user) unless c.user == nil
 				%td
 					= image_tag c.submission.url(:thumb)
 	%p
