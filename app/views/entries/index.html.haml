@@ -2,10 +2,19 @@
 	%h2
 		Entries for 
 		= link_to @req.title, request_path(@req)
-	%ul
+	%table
+		%tr
+			%th Entry Title
+			%th User
+			%th Image
 		- @entries.each do |c|		
-			%li
-				= link_to c.title, request_path(c.request_id) + entry_path(c)
+			%tr
+				%td
+					= link_to c.title, request_path(c.request_id) + entry_path(c)
+				%td 
+					= link_to c.user.login, user_path(c.user)
+				%td
+					= image_tag c.submission.url(:thumb)
 	%p
 		= link_to "New Entry", @path
 	

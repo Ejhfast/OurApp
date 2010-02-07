@@ -9,5 +9,7 @@
 		= f.label :submission
 		= f.file_field :submission
 	%p
+		= f.hidden_field "user_id", {:value => current_user.id}
+	%p
 		= f.submit "Create"
 	  

@@ -6,7 +6,7 @@
 		for request 
 		= link_to @entry.request.title, request_path(@entry.request)
 	%p
-		= image_tag @entry.submission.url(:thumb)
+		= image_tag @entry.submission.url(:large)
 	%p
 		See other
 		= link_to "entries", request_entries_path
