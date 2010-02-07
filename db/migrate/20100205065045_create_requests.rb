@@ -6,8 +6,8 @@ class CreateRequests < ActiveRecord::Migration
       t.integer :category_id
       t.integer :user_id
       t.integer :karma
-      t.date :start
-      t.date :end
+      t.datetime :start
+      t.datetime :end
       t.boolean :open
 
       t.timestamps
