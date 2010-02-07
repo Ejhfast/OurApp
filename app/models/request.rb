@@ -2,7 +2,7 @@ class Request < ActiveRecord::Base
   
   undef_method :open
   
-  before_save :reduce_users_karma
+  after_create :reduce_users_karma
   
   
   has_many :entries

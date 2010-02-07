@@ -8,8 +8,10 @@ class WinnersController < ApplicationController
     @win.entry_id = eid
     if current_user.id == @win.entry.request.user.id && @win.entry.request.open
       @win.save
+      # Close entry
       @win.entry.request.open = false
       @win.entry.request.save
+      # Give Karma to winner
       tkarm = @win.entry.user.karma_total
       ckarm = @win.entry.user.karma_current
       @win.entry.user.karma_total = tkarm + @win.entry.request.karma
