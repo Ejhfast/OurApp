@@ -5,5 +5,11 @@
 	%p
 		= image_tag @user.avatar.url(:medium)
 	%p
-		= link_to 'Edit Account Settings', edit_user_path(@user) 
+		= link_to 'Edit Account Settings', edit_user_path(@user)
+	%p
+		Your Total Karma:
+		= @user.karma_total
+	%p
+		Your Current Karma (currency):
+		= @user.karma_current
 .clear

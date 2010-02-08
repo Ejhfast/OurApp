@@ -1,7 +1,7 @@
 class AddUserFields < ActiveRecord::Migration
   def self.up
-    add_column :users, :karma_current, :integer
-    add_column :users, :karma_total, :integer
+    add_column :users, :karma_current, :integer, :default => 20
+    add_column :users, :karma_total, :integer, :default => 20
     add_column :users, :admin?, :boolean
   end
 
