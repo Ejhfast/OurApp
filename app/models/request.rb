@@ -2,6 +2,7 @@ class Request < ActiveRecord::Base
   has_many :entries
   has_many :commments
   belongs_to :user
+  belongs_to :category
   
   def submitted_long_ago
     # determine how many minutes ago was this script created/submitted
@@ -23,6 +24,10 @@ class Request < ActiveRecord::Base
     end
     units.chop! if value.round == 1
     "#{value.round} #{units}" 
+  end
+  
+  def self.find_by_categories(category_list)
+    Request.find(:all, :include => :category, :conditions =>{"categories.name" => category_list})
   end
   
 end

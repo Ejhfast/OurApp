@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
   
-  map.resources :requests
+  map.resources :requests, :collection => {:filter_by_category => :get}
   map.resources :entries
   map.resources :comments
 
