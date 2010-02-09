@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
                                    :thumb => "100x100>" }
                       
   
-  # validates_attachment_presence :avatar
+  validates_attachment_presence :avatar
   
   
   has_many :requests
