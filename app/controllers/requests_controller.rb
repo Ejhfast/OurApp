@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_filter :login_required, :except => [:index, :show, :filter_by_category]
+  
   def new
     @req = Request.new
   end
