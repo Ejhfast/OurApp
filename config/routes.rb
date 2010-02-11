@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.connect 'winner/declare_winner', :method => 'post', :controller => 'winners', :action => 'declare_winner'
   map.connect 'users/:id/gallery', :controller => 'users', :action => 'gallery'
+  map.connect 'requests/ajaxy_table', :controller => 'requests', :action => 'ajaxy_table'
   
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }

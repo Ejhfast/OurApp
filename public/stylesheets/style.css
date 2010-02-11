@@ -15,6 +15,9 @@ body {
 .flash {
   margin-top: 10px; }
 
+.black_links a {
+  color: black; }
+
 .onback {
   background-color: #424242;
   color: white; }
@@ -34,7 +37,3 @@ body {
 
 .underline {
   text-decoration: underline; }
-
-.pagination {
-  position: relative;
-  bottom: 20px; }

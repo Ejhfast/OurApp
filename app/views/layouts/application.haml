@@ -4,6 +4,7 @@
 		= stylesheet_link_tag 'print'
 		= stylesheet_link_tag 'screen'
 		= stylesheet_link_tag 'style'
+		= javascript_include_tag 'prototype'
 	%body
 		.container
 			.span-24.onback
@@ -23,6 +24,9 @@
 			.span-24.last
 			= yield
 			.span-24.center.last
-				%p Contact | About | Copyright 2007
-			.clear
+				%p 
+					= link_to 'Contact' 
+					| 
+					=link_to 'About' 
+					| Copyright 2007
 	

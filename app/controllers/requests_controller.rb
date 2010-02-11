@@ -1,6 +1,6 @@
 class RequestsController < ApplicationController
   
-  before_filter :login_required, :except => [:index, :show, :filter_by_category]
+  before_filter :login_required, :except => [:index, :show, :ajaxy_table]
   
   def new
     @req = Request.new
@@ -55,7 +55,16 @@ class RequestsController < ApplicationController
                              :order => sort_order[@order], :page => params[:page]
   end
   
-
+  def ajaxy_table
+    @order = params[:sort]
+    @selected_categories = params[:categories]
+    @categories = Category.find(:all)
+    @selected_categories = @categories.map{|category| category.name} if @selected_categories.blank?
+    @reqs = Request.paginate :all, :include => :category, 
+                             :conditions =>{"categories.name" => @selected_categories}, 
+                             :order => sort_order[@order], :page => params[:page]
+  end
+  
   private
   
   def find_all_categories
@@ -63,7 +72,7 @@ class RequestsController < ApplicationController
   end
   
 	def sort_order 
-	  {"karma" => "karma DESC", "old" => "end ASC", "new" => "end ASC", nil => nil}
+	  {"karma" => "karma DESC", "time" => "end DESC", "category" => "category_id ASC", "user" => "user_id ASC", nil => nil}
   end
 	
   

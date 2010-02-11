@@ -1,0 +1,1 @@
+page.replace_html 'ajaxy_table', :partial => 'table', :object => @reqs
