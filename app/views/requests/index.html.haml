@@ -5,27 +5,26 @@
 	%h2
 		=link_to 'Refresh Filter', requests_path
 		
-.span-24.last
+.span-22.append-1.prepend-1.last
 	- form_tag requests_path, :method => 'get' do
-		.span-12
+		.span-11
 			%ul
 				-@categories.each do |category|
 					= category_list_item(category, @selected_categories)
-		.span-12.last
+		.span-11.last
 			%h4
 				Sort By:
 				%br
 				= select_tag "sort", sort_order_as_options(@order)
 				%br
 				= submit_tag 'Sort and Filter'
-
+		%hr
 .span-11.prepend-1
 	%p
 		= link_to "New Request", new_request_path
 .span-11.append-1.align_right.last
 	%p
 		= will_paginate @reqs
-	%hr
 .span-22.prepend-1.append-1.last
 	%table
 		%tr.underline 
