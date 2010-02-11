@@ -1,7 +1,7 @@
 .span-22.prepend-1.append-1.center.last
 	%h2
 		Gallery for
-		= @user.login
+		= link_to @user.login, user_path(@user)
 	%hr
 .span-11.prepend-1.center
 	%h3

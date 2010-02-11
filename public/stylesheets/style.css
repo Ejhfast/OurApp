@@ -12,6 +12,9 @@ body {
   background-color: green;
   color: white; }
 
+.flash {
+  margin-top: 10px; }
+
 .onback {
   background-color: #424242;
   color: white; }
@@ -28,9 +31,6 @@ body {
 
 .center {
   text-align: center; }
-
-.slight_pad {
-  padding: 3px; }
 
 .underline {
   text-decoration: underline; }

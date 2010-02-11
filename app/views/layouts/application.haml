@@ -16,9 +16,9 @@
 						= render :partial => 'users/user_bar'
 			.span-23.prepend-1.last
 			.span-24.center.last
-				%p.green 
+				%p.green.flash 
 					= flash[:notice]
-				%p.red
+				%p.red.flash
 					= flash[:error]
 			.span-24.last
 			= yield
