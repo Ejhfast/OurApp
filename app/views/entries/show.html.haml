@@ -1,12 +1,17 @@
 .span-22.prepend-1.append-1.last
-	%p
-		Entry
+	- if @entry.winner
+		- word = "<font style='text-decoration:underline'>Winner</font>"
+	- else
+		- word = "Request"
+	%h2
+		= word
 		%b 
 			= @entry.title 
 		for request 
 		= link_to @entry.request.title, request_path(@entry.request)
 	%p
 		= image_tag @entry.submission.url(:large)
+.span-22.prepend-1.append-1.last
 	%p
 		See other
 		= link_to "entries", request_entries_path

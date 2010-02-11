@@ -1,0 +1,23 @@
+.span-22.prepend-1.append-1.center.last
+	%h2
+		Gallery for
+		= @user.login
+	%hr
+.span-11.prepend-1.center
+	%h3
+		= link_to 'All entries'
+.span-11.append-1.center.last
+	%h3
+		= link_to 'Winning entries'
+.span-22.prepend-1.append-1.center.last
+	%hr
+	%table
+		- @winners.to_a.each_slice(5) do |win|
+			%tr
+				- win.each do |sw|
+					%td
+						= image_tag sw.submission.url(:thumb)
+					
+				
+				
+	

@@ -5,7 +5,7 @@ body {
   background-color: white; }
 
 .red {
-  background-color: red;
+  background-color: #FFBFB3;
   color: white; }
 
 .green {
@@ -28,6 +28,9 @@ body {
 
 .center {
   text-align: center; }
+
+.slight_pad {
+  padding: 3px; }
 
 .underline {
   text-decoration: underline; }

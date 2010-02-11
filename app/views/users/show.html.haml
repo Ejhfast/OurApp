@@ -12,21 +12,39 @@
 		currency:
 		= "#{@user.karma_current}&sect;"
 	%hr	
-.span-11.prepend-1
-	%h3 
-		Recent Requests
+.span-7.prepend-1
+	%h3
+		Winning Entries
 	%ul
-		- @user.requests.each do |r|
-			%li 
-				= link_to r.title, request_path(r)
-.span-11.append-1.last
+		- @winners.each do |w|
+			%li
+				= link_to w.winner.entry.title, request_path(w.winner.entry.request) + entry_path(w.winner.entry)
+		- if @winners.empty?
+			%li Nothing here!
+.span-7
 	%h3
 		Recent Entries
 	%ul
-		- @user.entries.each do |e|
+		- @entries.each do |e|
 			%li
 				= link_to e.title, request_path(e.request) + entry_path(e)
-
+		- if @entries.empty?
+			%li Nothing here!
+.span-7.append-2.last
+	%h3 
+		Recent Requests
+	%ul
+		- @requests.each do |r|
+			%li 
+				= link_to r.title, request_path(r)
+		- if @requests.empty?
+			%li Nothing here!
+.span-22.prepend-1.append-1.center.last
+	%hr
+	%h4
+		View 
+		= link_to "Gallery", :controller => 'users', :action => 'gallery', :id => @id
+		of Winners
 .span-22.prepend-1.append-1.last
 	%p
 		= link_to 'Edit Account Settings', edit_user_path(@user)

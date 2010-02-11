@@ -12,6 +12,7 @@ class Request < ActiveRecord::Base
   
   named_scope :ordered, lambda {|*args| {:order => (args.first || 'created_at DESC')} }
   
+  has_one :winner, :through => :entries  
   
   validates_presence_of     :title
   validates_presence_of     :category_id

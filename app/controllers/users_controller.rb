@@ -12,7 +12,11 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    @id = params[:id]
+    @user = User.find(@id)
+    @winners = @user.entries.select{|x| x.winner}
+    @requests = @user.requests
+    @entries = @user.entries
   end
  
   def create
@@ -49,6 +53,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path
+  end
+  
+  def gallery
+    @user = User.find(params[:id])
+    @winners = @user.entries.select{|x| x.winner}
   end
   
 
