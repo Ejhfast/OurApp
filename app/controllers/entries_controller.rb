@@ -1,5 +1,7 @@
 class EntriesController < ApplicationController
   
+  before_filter :login_required
+  
   def new
     # Select appropriate path (comments can be created from different sources)
     rid = params[:request_id]

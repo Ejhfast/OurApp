@@ -1,4 +1,8 @@
 class WinnersController < ApplicationController
+  
+  before_filter :login_required
+  
+  
   def show
   end
   

@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
   
+  before_filter :login_required
+  
+  
   def get_comment_thing
     if params[:request_id] != nil
       @thing = Request.find(params[:request_id])
