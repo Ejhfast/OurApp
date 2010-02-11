@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  before_filter :login_required
+  before_filter :is_admin
+  
   def new
      @cat = Category.new
    end
@@ -43,5 +46,12 @@ class CategoriesController < ApplicationController
 
    def index
      @categories = Category.all
+   end
+   
+   def is_admin
+     if not current_user.admin
+       flash[:error] = "Only an admin can add categories"
+       redirect_to root_path
+     end
    end
 end
