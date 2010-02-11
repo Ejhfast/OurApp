@@ -20,7 +20,9 @@ class Request < ActiveRecord::Base
   validates_numericality_of :karma
   validate :validate_karma
     
-  public
+  def self.per_page
+      25
+  end
   
   def inv_karma
     -1 * self.karma

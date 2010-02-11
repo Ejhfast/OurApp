@@ -46,25 +46,16 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @reqs = Request.ordered(sort_order[params[:sort]])
     @order = params[:sort]
+    @selected_categories = params[:categories]
     @categories = Category.find(:all)
     @selected_categories = @categories.map{|category| category.name} if @selected_categories.blank?
-    respond_to do |format|
-      format.html
-      format.xml {render :xml => @requests}
-      @requests= Request
-    end
+    @reqs = Request.paginate :all, :include => :category, 
+                             :conditions =>{"categories.name" => @selected_categories}, 
+                             :order => sort_order[@order], :page => params[:page]
   end
   
-  def filter_by_category
-    @selected_categories = params[:categories]
-    @order = params[:sort]
-    @reqs = Request.find_by_categories(@selected_categories, sort_order[@order])
-    @categories = Category.find(:all)
-    render :action => "index"
-  end
-  
+
   private
   
   def find_all_categories

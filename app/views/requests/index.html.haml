@@ -5,20 +5,28 @@
 	%h2
 		=link_to 'Refresh Filter', requests_path
 		
-- form_tag filter_by_category_requests_path, :method => 'get' do
-	.span-4.prepend-1
-		%ul
-			-@categories.each do |category|
-				= category_list_item(category, @selected_categories)
-	.span-4.center.append-15.last			
-		%h4
-			Sort By:
-			%br
-			= select_tag "sort", sort_order_as_options(@order)
-			%br
-			= submit_tag 'Sort and Filter'
-.span-22.prepend-1.append-1.last
+.span-24.last
+	- form_tag requests_path, :method => 'get' do
+		.span-12
+			%ul
+				-@categories.each do |category|
+					= category_list_item(category, @selected_categories)
+		.span-12.last
+			%h4
+				Sort By:
+				%br
+				= select_tag "sort", sort_order_as_options(@order)
+				%br
+				= submit_tag 'Sort and Filter'
+
+.span-11.prepend-1
+	%p
+		= link_to "New Request", new_request_path
+.span-11.append-1.align_right.last
+	%p
+		= will_paginate @reqs
 	%hr
+.span-22.prepend-1.append-1.last
 	%table
 		%tr.underline 
 			%th Name
@@ -42,5 +50,3 @@
 					= link_to r.user.login, user_path(r.user) unless r.user == nil
 				%td
 					= r.submitted_long_ago
-	%p
-		= link_to "New Request", new_request_path
