@@ -6,13 +6,12 @@
 	%h2
 		karma:
 		= @user.karma_total
-	%hr
 .span-10.append-2.last
 	%h2
 		currency:
 		= "#{@user.karma_current}&sect;"
-	%hr	
 .span-7.prepend-1
+	%hr	
 	%h3
 		Winning Entries
 	%ul
@@ -22,6 +21,7 @@
 		- if @winners.empty?
 			%li Nothing here!
 .span-7
+	%hr	
 	%h3
 		Recent Entries
 	%ul
@@ -31,6 +31,7 @@
 		- if @entries.empty?
 			%li Nothing here!
 .span-7.append-2.last
+	%hr	
 	%h3 
 		Recent Requests
 	%ul
