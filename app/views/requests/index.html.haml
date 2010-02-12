@@ -1,16 +1,47 @@
-.span-17.prepend-1
-	%h2
-		List of Open Requests
-.span-5.append-1.last
-	%h2
-		=link_to 'Refresh Filter', requests_path
-		
 .span-22.append-1.prepend-1.last
-	- form_tag requests_path, :method => 'get' do
-		%ul
-			-@categories.each do |category|
-				= category_list_item(category, @selected_categories)
-		= submit_tag 'Filter'
+	%h2
+		Open Requests
+.span-22.append-1.prepend-1.last
+	%hr
+	%h3
+		Filter by Category
+.span-22.append-1.prepend-1.last
+	.span-12
+		- form_tag requests_path, :method => 'get' do
+			- n = @categories.size / 4
+			- color = "#9BAF9D"
+			%p
+				%table{:CELLPADDING => "0px"}
+					-@categories.each_slice(n) do |slice|
+						- if color == "#9BAF9D"
+							- color = "#CED6D6"
+						-else
+							- color = "#9BAF9D"
+						%tr
+							- slice.each do |category|
+								- if color == "#9BAF9D"
+									- color = "#CED6D6"
+								-else
+									- color = "#9BAF9D"
+								%td{:style => "background-color:#{color}"}
+									= category_list_item(category, @selected_categories)
+					%tr
+						%td
+					%tr
+						%td
+							= submit_tag 'Filter'
+						%td
+							=link_to 'Refresh Filter', requests_path
+	.span-8.append-1.prepend-1.last
+		%h4
+			don't see a category that ought to be here? we can help you out.
+		%h4
+			= link_to 'click here', root_path
+			to send in a request.
+		%h4
+			other concerns? we welcome 
+			=link_to 'feedback', root_path
+			of any kind.
 	%hr
 .span-11.prepend-1
 	%p

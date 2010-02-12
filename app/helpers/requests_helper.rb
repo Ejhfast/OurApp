@@ -6,10 +6,10 @@ module RequestsHelper
 			checked = false
 		end
 		
-		ret = "<li>"
+		ret = ""
   	ret += check_box_tag('categories[]', category.name, checked) 
   	ret += category.name
-  	ret += "</li>"
+  	ret += ""
 	end 
 	
 	def sort_order_as_options(selected)
