@@ -1,17 +1,17 @@
 .span-22.prepend-1.append-1.last
-	%h1
+	%h2
 		= @req.title
 	%hr
 .span-5.prepend-1
-	%h2
+	%h3
 		Award:
 		= "#{@req.karma}&sect;"
 .span-6
-	%h2
+	%h3
 		Posted by
 		= link_to "[#{@req.user.login}]", user_path(@req.user)
 .span-12.last
-	%h2
+	%h3
 		Ends:
 		= @req.end.strftime("%B %d %H:%M %p")
 .span-22.prepend-1.append-1.last
