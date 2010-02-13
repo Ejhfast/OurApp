@@ -26,7 +26,7 @@ class WinnersController < ApplicationController
       
       # Give Karma to Others
       @win.entry.request.entries.each do |other|
-        add_karma(other.user, @win.entry.request.karma, 1)
+        add_karma(other.user, @win.entry.request.karma, 1) unless @win.entry.user.id == other.user.id
       end
     else
       flash[:error] = "You cannot declare a winner on this entry"

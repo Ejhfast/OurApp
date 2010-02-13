@@ -1,17 +1,17 @@
+.span-12.last.prepend-6.append-6.center.last
+	- form_tag session_path do
+		%p
+			= label_tag 'login'
+			%br
+			= text_field_tag 'login', @login
+		%p
+			= label_tag 'password'
+			%br
+			= password_field_tag 'password', nil
 
-- form_tag session_path do
-	%p
-		= label_tag 'login'
-		%br
-		= text_field_tag 'login', @login
-	%p
-		= label_tag 'password'
-		%br
-		= password_field_tag 'password', nil
-
-	%p
-		= label_tag 'remember_me', 'Remember me'
-		%br
-		= check_box_tag 'remember_me', '1', @remember_me
-	%p
-		= submit_tag 'Log in'
+		%p
+			= label_tag 'remember_me', 'Remember me'
+			%br
+			= check_box_tag 'remember_me', '1', @remember_me
+		%p
+			= submit_tag 'Log in'

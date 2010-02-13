@@ -27,7 +27,6 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => 'home'
   
   map.about 'about', :controller => 'home', :action => 'about'
-  map.ethan 'ethan', :controller => 'home', :action => 'ethan'
   
   
   map.connect 'winner/declare_winner', :method => 'post', :controller => 'winners', :action => 'declare_winner'
