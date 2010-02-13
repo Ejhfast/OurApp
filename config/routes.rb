@@ -26,6 +26,10 @@ ActionController::Routing::Routes.draw do |map|
   
   map.root :controller => 'home'
   
+  map.about 'about', :controller => 'home', :action => 'about'
+  map.ethan 'ethan', :controller => 'home', :action => 'ethan'
+  
+  
   map.connect 'winner/declare_winner', :method => 'post', :controller => 'winners', :action => 'declare_winner'
   map.connect 'users/:id/gallery', :controller => 'users', :action => 'gallery'
   map.connect 'requests/ajaxy_table', :controller => 'requests', :action => 'ajaxy_table'

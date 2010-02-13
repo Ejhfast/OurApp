@@ -16,11 +16,18 @@ class WinnersController < ApplicationController
       @win.entry.request.open = false
       @win.entry.request.save
       # Give Karma to winner
-      tkarm = @win.entry.user.karma_total
-      ckarm = @win.entry.user.karma_current
-      @win.entry.user.karma_total = tkarm + @win.entry.request.karma
-      @win.entry.user.karma_current = ckarm + @win.entry.request.karma
-      @win.entry.user.save
+      add_karma(@win.entry.user, @win.entry.request.karma, 2)
+      
+      #tkarm = @win.entry.user.karma_total
+      #ckarm = @win.entry.user.karma_current
+      #@win.entry.user.karma_total = tkarm + @win.entry.request.karma * 2
+      #@win.entry.user.karma_current = ckarm + @win.entry.request.karma * 2
+      #@win.entry.user.save
+      
+      # Give Karma to Others
+      @win.entry.request.entries.each do |other|
+        add_karma(other.user, @win.entry.request.karma, 1)
+      end
     else
       flash[:error] = "You cannot declare a winner on this entry"
     end

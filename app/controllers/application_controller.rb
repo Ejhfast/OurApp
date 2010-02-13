@@ -13,7 +13,12 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-
+  
+  def add_karma(user, karma, f)
+    user.karma_current = user.karma_current + karma * f
+    user.karma_total = user.karma_total + karma * f
+    user.save
+  end
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 end
