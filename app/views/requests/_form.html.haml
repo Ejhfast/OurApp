@@ -23,6 +23,8 @@
 		= f.hidden_field "user_id", {:value => current_user.id}
 	%p
 		= f.hidden_field "open", {:value => true}
+	%p
+		= f.hidden_field "start", {:value => Time.now}
 	
 	%p
 		= f.submit "Create"

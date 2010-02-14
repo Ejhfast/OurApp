@@ -2,7 +2,8 @@
 	%p
 		%table
 			%tr.underline.black_links 
-				%th Name
+				%th 
+					= link_to_remote 'Name', {:url => {:controller => 'requests', :action => 'ajaxy_table', :categories => @selected_categories, :sort => "name"} }, :href => url_for(:action => 'index', :controller => 'requests', :categories => @selected_categories, :sort => "name")
 				%th 
 					= link_to_remote 'Category', {:url => {:controller => 'requests', :action => 'ajaxy_table', :categories => @selected_categories, :sort => "category"} }, :href => url_for(:action => 'index', :controller => 'requests', :categories => @selected_categories, :sort => "category")
 				%th 
@@ -26,4 +27,4 @@
 					%td
 						= link_to r.user.login, user_path(r.user) unless r.user == nil
 					%td
-						= r.submitted_long_ago
+						= r.submitted_long_ago 

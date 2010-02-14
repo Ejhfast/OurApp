@@ -72,7 +72,8 @@ class RequestsController < ApplicationController
   end
   
 	def sort_order 
-	  {"karma" => "karma DESC", "time" => "end DESC", "category" => "category_id ASC", "user" => "user_id ASC", nil => nil}
+	  {"karma" => "karma DESC", "time" => "end DESC", "category" => "category_id ASC", 
+	    "user" => "user_id ASC", "name" => "title ASC", nil => nil}
   end
 	
   
