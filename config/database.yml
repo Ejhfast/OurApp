@@ -20,6 +20,5 @@ production:
     encoding: utf8
     database: biject
     pool: 5
-    username: biject
-    password: yc2010
+    username: root
     host: localhost
