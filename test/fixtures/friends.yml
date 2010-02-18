@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  initiated: 1
+  received: 1
+
+two:
+  initiated: 1
+  received: 1
