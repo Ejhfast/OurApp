@@ -1,7 +1,11 @@
 .span-22.append-1.prepend-1.center.last
 	%h1 where life plays fair, for free
 	%hr
-.span-24.last
+#signup
+	.span-18.append-3.prepend-3.center.last
+		%p
+			=link_to_remote '[button for one-step signup]', {:url => {:controller => 'home', :action => 'render_signup'} }, :href => url_for(:action => 'new', :controller => 'users')
+		%hr
 .span-12.center
 	%h2 
 		= link_to 'Open requests.', requests_path
