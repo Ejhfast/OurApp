@@ -1,11 +1,7 @@
-.span-22.append-1.prepend-1.center.last
-	%h1 where life plays fair, for free
+.span-22.prepend-1.append.1.center
+	%h1 
+		where life plays fair, for free
 	%hr
-#signup
-	.span-18.append-3.prepend-3.center.last
-		%p
-			=link_to_remote '[button for one-step signup]', {:url => {:controller => 'home', :action => 'render_signup'} }, :href => url_for(:action => 'new', :controller => 'users')
-		%hr
 .span-12.center
 	%h2 
 		= link_to 'Open requests.', requests_path
@@ -16,7 +12,14 @@
 	%hr
 	.center
 		<object width="600" height="383"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9627525&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9627525&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="383"></embed></object><p><a href="http://vimeo.com/9627525">BijectKarma</a> from <a href="http://vimeo.com/user3226476">Ethan Fast</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+	%hr
+#signup
+	.span-16.append-4.prepend-4.last
+		%p.center
+			=link_to_remote '<button type="button" id="big_button">one-step signup</button>', {:url => {:controller => 'home', :action => 'render_signup'} }, :href => url_for(:action => 'new', :controller => 'users')
+.span-16.last.prepend-4.append-4
+	%hr
 	%h3.center
-		so go ahead, browse the 
+		or go ahead, browse the 
 		= link_to 'exchange.', requests_path 
 

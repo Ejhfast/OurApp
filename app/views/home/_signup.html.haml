@@ -1,0 +1,25 @@
+.span-12.prepend-6.append-6.last
+	- form_for @user, :html => {:multipart => true} do |f|
+		= f.error_messages
+		.span-6.center
+			%h3
+				= f.label :login
+				%br
+				= f.text_field :login
+		.span-6.center.last
+			%h3
+				= f.label :email
+				%br
+				= f.text_field :email
+		.span-6.center
+			%h3
+				= f.label :password
+				%br
+				= f.password_field :password
+		.span-6.center.last
+			%h3
+				= f.label :confirm
+				%br
+				= f.password_field :password_confirmation
+		%h3.center
+			= f.submit 'sign up'
