@@ -2,4 +2,46 @@
 	%h2
 		About
 	%hr
-
+.span-8.prepend-7.append-7.last.center
+	= javascript_include_tag 'init'
+	= javascript_include_tag 'processing'		
+	
+	%p 
+		Yeah, getting a bit ahead of ourselves, perhaps.
+		Something will be here eventually.
+	:erb
+		<script target="#canvas1" type="application/processing">
+			void setup() 
+			{
+			  size(100, 100);  // Size should be the first statement
+			  stroke(255);     // Set line drawing color to white
+			  frameRate(90);
+			}
+			float y, z, w, x, a, b = height / 2;
+			void draw() 
+			{ 
+			  background(0);   // Set the background to black
+			  z = z + 1;
+			  y = y - 1;
+			  w = w - 1;
+			  x = x + 1;
+			  a = a + 2;
+			  b = b - 2;
+			  if (y < 0) { y = height; } 
+			  if (z > height) { z = 0 }
+			  if (w < 0) { w = width }
+			  if (x > width) { x = 0 }
+			  if (a > height) { a = 0 }
+			  if (b < 0) { b = width }
+			  line(0, y, width, y);  
+			  line(0, z, width, z);
+			  line(0, a, width, a);
+			  line(b, 0, b, height);
+			  line(w, 0, w, height);
+			  line(x, 0, x, height);
+			}
+		</script>
+	%canvas.center{:width => '300', :height => '300'}
+.span-8.prepend-7.append-7.last.center
+	%br
+	
