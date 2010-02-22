@@ -16,7 +16,7 @@
 #signup
 	.span-16.append-4.prepend-4.last
 		%p.center
-			=link_to_remote '<button type="button" id="big_button">one-step signup</button>', {:url => {:controller => 'home', :action => 'render_signup'} }, :href => url_for(:action => 'new', :controller => 'users')
+			=link_to_remote '<button id="big_button">one-step signup</button>', {:url => {:controller => 'home', :action => 'render_signup'} }, :href => url_for(:action => 'new', :controller => 'users')
 .span-16.last.prepend-4.append-4
 	%hr
 	%h3.center
