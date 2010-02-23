@@ -54,3 +54,7 @@ body {
   padding: 20px;
   color: white;
   text-align: center; }
+
+.thumb {
+  max-height: 100px;
+  max-width: 100px; }

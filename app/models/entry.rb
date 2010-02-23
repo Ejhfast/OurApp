@@ -6,9 +6,9 @@ class Entry < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :request_id
   
-  has_attached_file :submission, 
-                      :styles => { :large => "600x600>",
-                                   :medium => "300x300>",
-                                   :thumb => "100x100>" }
+  has_attached_file :submission#, 
+                      #:styles => { :large => "600x600>",
+                       #            :medium => "300x300>",
+                        #           :thumb => "100x100>" }
                                    
 end

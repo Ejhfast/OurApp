@@ -16,7 +16,7 @@
 			%tr
 				- win.each do |sw|
 					%td
-						= image_tag sw.submission.url(:thumb)
+						= augment_image sw.submission.url, :class => "thumb"
 					
 				
 				

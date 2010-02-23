@@ -14,7 +14,7 @@
 				%td 
 					= link_to c.user.login, user_path(c.user) unless c.user == nil
 				%td
-					= image_tag c.submission.url(:thumb)
+					= augment_image c.submission.url, :class => "thumb"
 	%p
 		= link_to "New Entry", @path
 	
