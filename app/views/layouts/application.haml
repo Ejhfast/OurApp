@@ -16,12 +16,12 @@
 				.span-12.align_right.onback.last
 					%p
 						= render :partial => 'users/user_bar'
-			.span-23.prepend-1.last
-			.span-24.center.last
-				%p.green.flash 
-					= flash[:notice]
-				%p.red.flash
-					= flash[:error]
+			- if flash[:notice] or flash[:error]
+				.span-24.center.last
+					%p.green.flash 
+						= flash[:notice]
+					%p.red.flash
+						= flash[:error]
 			.span-24.last
 			= yield
 			.span-22.prepend-1.append-1.last

@@ -1,18 +1,17 @@
-.span-22.prepend-1.append.1.center
-	%h1 
-		where life plays fair, for free
-	%hr
-.span-12.center
-	%h2 
-		= link_to 'Open requests.', requests_path
-.span-12.center.last
-	%h2 
-		= link_to 'Awesome work.', requests_path
+.span-24.last
+	%p
+.span-22.red.prepend-1.append-1.center
+	= image_tag '/bkbanner.png', :width => '500', :alt => 'BijectKarma'
+.span-24.last
+	.span-12.center
+		%a{ :href => requests_path }
+			= image_tag '/bkopen.png', :alt => 'open requests'
+	.span-12.center.last
+		%a{ :href => requests_path }
+			= image_tag '/bkwork.png', :alt => 'awesome work'
 .span-16.last.prepend-4.append-4
-	%hr
 	.center
 		<object width="600" height="383"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9627525&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=9627525&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="383"></embed></object><p><a href="http://vimeo.com/9627525">BijectKarma</a> from <a href="http://vimeo.com/user3226476">Ethan Fast</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
-	%hr
 #signup
 	.span-16.append-4.prepend-4.last
 		%p.center
