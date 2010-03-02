@@ -10,7 +10,7 @@
 		for request 
 		= link_to @entry.request.title, request_path(@entry.request)
 	%p
-		= augment_image @entry.submission.url, :size=>"600x600"
+		= augment_image @entry.submission.url, :class=>"big_image"
 .span-22.prepend-1.append-1.last
 	%p
 		See other

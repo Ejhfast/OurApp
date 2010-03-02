@@ -58,3 +58,7 @@ body {
 .thumb {
   max-height: 100px;
   max-width: 100px; }
+
+.big_image {
+  max-height: 600px;
+  max-width: 600px; }

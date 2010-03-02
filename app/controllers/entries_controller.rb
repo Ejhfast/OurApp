@@ -66,7 +66,7 @@ class EntriesController < ApplicationController
 
   def index
     # Select appropriate path (comments can be created from different sources)
-    rid = params[:request_id]
+    rid = params[:request_id].to_i
     if rid != nil
       @path = new_request_entry_path
       @entries = Entry.find(:all, :conditions => {:request_id => rid})

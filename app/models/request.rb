@@ -24,6 +24,10 @@ class Request < ActiveRecord::Base
       25
   end
   
+  def to_param
+    "#{self.id}-#{self.title}" 
+  end
+
   def tnum
     s = self.start.to_i
   end

@@ -11,4 +11,8 @@ class Entry < ActiveRecord::Base
                        #            :medium => "300x300>",
                         #           :thumb => "100x100>" }
                                    
+  def to_param
+    "#{self.id}-#{self.title}"
+  end
+
 end

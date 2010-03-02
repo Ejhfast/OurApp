@@ -10,7 +10,7 @@
 		- @entries.each do |c|		
 			%tr
 				%td
-					= link_to c.title, request_path(c.request_id) + entry_path(c)
+					= link_to c.title, request_path(c.request) + entry_path(c)
 				%td 
 					= link_to c.user.login, user_path(c.user) unless c.user == nil
 				%td
