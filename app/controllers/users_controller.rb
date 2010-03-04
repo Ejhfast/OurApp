@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   def index
     @users = User.find(:all, :order => "karma_total DESC")
+    @work = @users.map{|x| x.entries }.flatten.map{|x| x.winner }.compact.first(10)
   end
 
   def new

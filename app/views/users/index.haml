@@ -16,3 +16,13 @@
 					= link_to user.login, user_path(user)  
 				%td 
 					= user.karma_total
+.span-22.prepend-1.append-1.last
+	%hr
+	%h2 A Sample of Winning Work
+	%table
+		- @work.each_slice(3) do |slice|
+			%tr
+				- slice.each do |item|
+					%td
+						= augment_image item.entry.submission.url, :class => "medium_image"
+		
