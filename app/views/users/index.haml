@@ -10,10 +10,9 @@
 				Name
 			%th 
 				Karma
-		- @users.each do |leader_hash, leader|
-		- user = leader_hash.keys[0]
+		- @users.each do |user|
 			%tr
-				%td 
-					= user.login  
+				%td
+					= link_to user.login, user_path(user)  
 				%td 
 					= user.karma_total
