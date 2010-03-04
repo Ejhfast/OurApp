@@ -1,0 +1,19 @@
+.span-22.prepend-1.append-1.last
+	%h2
+		Current Leaders
+	%hr
+
+.span-16.prepend-4.append-4.last
+	%table
+		%tr
+			%th 
+				Name
+			%th 
+				Karma
+		- @users.each do |leader_hash, leader|
+		- user = leader_hash.keys[0]
+			%tr
+				%td 
+					= user.login  
+				%td 
+					= user.karma_total
