@@ -16,9 +16,10 @@
 					= link_to user.login, user_path(user)  
 				%td 
 					= user.karma_total
-.span-18.prepend-3.append-3.last
+.span-22.prepend-1.append-1.last
 	%hr
 	%h2 A Sample of Winning Work
+.span-18.prepend-3.append-3.last
 	%table.center
 		- @work.each_slice(3) do |slice|
 			%tr
