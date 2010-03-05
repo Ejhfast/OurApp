@@ -1,0 +1,21 @@
+<h1>Current Leaders</h1>
+ 
+<!--Items-->
+<ul class="stories">
+	<!--list-->
+
+	<% @users.each do |leader_hash, leader| %>
+       <% user = leader_hash.keys[0] %>
+	<li class="script moddable odd-item">
+
+			<div class="story-content">
+				<div class="story-title">
+					<%= user.login %>
+		    	<span class="title">
+		    		<%= user.karma_total %>
+		  		</span>
+	      </div>
+
+  </li>
+<% end %>
+</ul>
